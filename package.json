@@ -3,10 +3,17 @@
   "version": "0.0.1",
   "description": "Rollup plugin which allows to replace files in external dependency with local files.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/souljorje/rollup-plugin-mirror-replacement.git"
+  },
   "keywords": [
     "rollup",
     "plugin"
   ],
   "author": "Georgii Bukharov <souljorje@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "glob": "^7.2.0"
+  }
 }
