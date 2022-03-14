@@ -1,0 +1,12 @@
+{
+  "name": "rollup-plugin-mirror-replacement",
+  "version": "0.0.1",
+  "description": "Rollup plugin which allows to replace files in external dependency with local files.",
+  "main": "index.js",
+  "keywords": [
+    "rollup",
+    "plugin"
+  ],
+  "author": "Georgii Bukharov <souljorje@gmail.com>",
+  "license": "MIT"
+}
