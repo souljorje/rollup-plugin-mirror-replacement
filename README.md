@@ -1,4 +1,4 @@
-# @rollup/plugin-alias
+# rollup-plugin-mirror-replacement
 
 [npm-badge]: https://img.shields.io/npm/v/rollup-plugin-mirror-replacement
 [npm-url]: https://www.npmjs.com/package/rollup-plugin-mirror-replacement
