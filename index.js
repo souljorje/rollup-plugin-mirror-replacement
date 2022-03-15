@@ -1,5 +1,6 @@
 /**
  * - watch for new files
+ * - make unplugin
  */
 
  import { createRequire } from 'module';
@@ -31,6 +32,7 @@
      const globExtensions = extensions.join(',');
      return {
          name: `rollup-plugin-${NAMESPACE}`,
+         enforce: 'pre', // temp 🚲 for vite (unplugin soon)
          async resolveId(source, importer) {
              if (!validate(source, importer)) return null;
  
