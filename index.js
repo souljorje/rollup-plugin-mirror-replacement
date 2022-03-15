@@ -17,12 +17,12 @@
      include,
      exclude,
      packages,
-     baseDir: passedBaseDir,
+     rootDir: passedRootDir,
      srcDir: passedSrcDir = './src',
      extensions = ['js', 'mjs'],
  } = {}) {
-     const baseDir = passedBaseDir || process.cwd();
-     const srcDir = path.resolve(baseDir, passedSrcDir);
+     const rootDir = passedRootDir || process.cwd();
+     const srcDir = path.resolve(rootDir, passedSrcDir);
      const cache = {};
      const filter = createFilter(include, exclude);
      const importers = packages.map((v) => normalizePath(path.dirname(require.resolve(v))));
@@ -31,7 +31,6 @@
      const globExtensions = extensions.join(',');
      return {
          name: `rollup-plugin-${NAMESPACE}`,
-         enforce: 'pre',
          async resolveId(source, importer) {
              if (!validate(source, importer)) return null;
  
@@ -62,7 +61,7 @@
  
              if (logLevel !== 'silent') {
                  if (localFilePathWithExt) {
-                     console.info(`${NAMESPACE}: .${filePath.replace(baseDir, '')} 🔄 .${localFilePathWithExt.replace(baseDir, '')}`);
+                     console.info(`${NAMESPACE}: .${filePath.replace(rootDir, '')} 🔄 .${localFilePathWithExt.replace(rootDir, '')}`);
                  }
              }
  
